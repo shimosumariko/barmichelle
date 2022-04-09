@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>BarMichelle</title>
+  <meta name="keywords" content="バー,バーミシェル,BarMichelle,千歳烏山,お一人様,">
+  <meta name="discription" content="考え中">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="shimosumariko_style.css">
+
+
+  <!-- jQueryは上記のようにリンクすると利用できます。※jQuery自体はシンプルなものを書くのは簡単なのですが、使われなくなりつつあることは念頭においた方が良いと思います（もともとは古いブラウザへ対応するためのもの） 0221 -->	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      // 参考: https://125naroom.com/web/2899
+      // #で始まるa要素をクリックした場合
+      $('a[href^="#"]').click(function(){
+        // 移動先を0px調整する。0を30にすると30px下にずらすことができる。
+        var adjust = 0;
+        // スクロールの速度（ミリ秒）
+        var speed = 400;
+        // アンカーの値取得 リンク先（href）を取得して、hrefという変数に代入
+        var href= $(this).attr("href");
+        // 移動先を取得 リンク先(href）のidがある要素を探して、targetに代入
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        // 移動先を調整 idの要素の位置をoffset()で取得して、positionに代入
+        var position = target.offset().top + adjust;
+        // スムーススクロール linear（等速） or swing（変速）
+        $('body,html').animate({scrollTop:position}, speed, 'swing');
+        return false;
+      });
+    });
+  </script>
+
+
+</head>
+
+<body>
+	
+  <header>
+    <!--<div class="header-logo">BarMichelle</div>-->
+    <img class="header-logo" src="images/michelle-logo.png" alt="logo">
+    <div class="header-list">
+
+		
+	<!--About Menu Accessをクリックすると指定の位置までスクロールできるようにしたい。classではなくidを付けるべき? 0219-->	
+  	<!-- A. はい、idが一般的です。リンク先がidの場合は href="#about" とします。-->	
+      <nav>
+        <ul>
+		 
+		  <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+		  <li><a href="#access">Access</a></li>
+          <li><a href="https://www.instagram.com/bar_michelle.4u/" target="_blank"><img class="instagram" src="images/Instagram_icon.png" alt="instagram"></a></li>
+          <li><a href="https://www.facebook.com/u.takashima" target="_blank"><img class="fb" src="images/fb_icon.png" alt="fb"></a></li>
+          <li><a href="#contact"><div class="Contact">Contact</div></a></li>
+        
+		  </ul>
+      </nav>
+
+    </div>
+  </header>
+
+<main>
+	
+    <img class="TOP" src="images/TOP②_michelleDSC_4923.png" alt="外観">
+	
+
+    <div class="heading-common margin-top-l">
+      <h2>News</h2>
+    </div>
+	  
+	  <dl class="news">
+        2月13日(日)まで時短営業となります。<br>
+        Open17:00<br>
+        Closed21:00<br>
+        ※ラストオーダー20:00<br>
+        
+      </dl>
+
+    <section id="about" class="about">
+
+       <!--<ul>
+        <li><img class="About" src="images/icon_flower1.png" alt="flower">
+        </li>
+        <li>About</li>
+        <li><img class="About2" src="images/icon_flower1.png" alt="flower">
+        </li>
+      </ul>-->
+
+      <div class="heading-common margin-top-l">　<!--　→ CSSではセレクタを「.heading-common」「.margin-top-l 」とそれぞれ指定している。"heading-common margin-top-l"という風に、スペースを空けて２つのclass名をつけることができる？-->
+        <!-- はい、スペース区切りで複数のclassをいくつでも指定できます。ベースとなる共通のclassと、そこだけで使うclassを組み合わせることが多いです。 -->
+        <h2 class="has-side-flower">About</h2>
+      </div>
+
+      <img class="you-san" src="images/yusan.png" alt="master">
+
+
+
+
+
+      <dl class="introduction">
+        BarMichelleは2008年にOpenしました。<br>
+        店主の高嶋はFranceに数年間住んでいたこともあり、<br>
+        店内には可愛らしい小物やお花が並んでいます。<br>
+        優しい店主がお迎えいたしますので、<br>
+        女性おひとり様でもお気軽にお越し頂けます。<br>
+        一見、入りづらい扉ではございますが、<br>
+        すこし勇気を出して開けていただければ嬉しく思います。
+      </dl>
+    </section>
+
+
+    <section id="menu" class="menu">
+      <div class="heading-common margin-top-l">
+        <h2 class="has-side-flower">Menu</h2>
+      </div>
+		
+      <div class="charge-container">
+        <p class="charge">chargeお一人様</p>
+        <p class="price">&yen;500</p>
+      </div>
+    </section>
+
+
+    <section class="beermenu margin-top-common sample">
+      <div class="grid-row-2">
+        <div class="grid-col">
+          <div class="grid-col-inner">
+            <div class="menu-container">
+              <h2>Beer</h2>
+              <ul>
+                <li class="heartland">HeartLand　&yen;700</li><br>
+                <li class="hoegaarden">Hoegaarden　&yen;700</li><br>
+                <li class="coronaextra">CoronaExtra　&yen;700</li><br>
+                <li class="guiness">Guiness　&yen;700</li><br>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-col">
+          <div class="grid-col-inner">
+            <div class="bg-gradation">
+              <img class="beerphoto" src="images/Menu_Beer.png" alt="Beer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!--<section class="beermenu">
+      <h2>Beer</h2>
+      <ul>
+        <li class="heartland">HeartLand　¥700</li><br>
+        <li class="hoegaarden">Hoegaarden　¥700</li><br>
+        <li class="coronaextra">CoronaExtra　¥700</li><br>
+        <li class="guiness">Guiness　¥700</li><br>
+      </ul>
+
+      <img class="beerphoto" src="images/Menu_Beer.png" alt="Beer">
+
+    </section>-->
+<section class="whiskymenu margin-top-common sample">
+      
+        <div class="grid-row-2">
+		 <div class="grid-col">
+          <div class="grid-col-inner">
+            <div class="bg-gradation">
+              <img class="whiskyphoto" src="images/Menu_whiskypng.png" alt="whisky">
+            </div>
+          </div>
+        </div>
+	
+	  
+        <div class="grid-col">
+          <div class="grid-col-inner">
+            <div class="menu-container">
+              <h2>Whisky</h2>
+              <ul>
+                <li class="jamson">Jamson　&yen;500</li><br>
+                <li class="dewars">Dewar'sWL　&yen;500</li><br>
+                <li class="ardbeg">Ardbeg　&yen;800</li><br>
+                <li class="springbank">SpringBank　&yen;900　etc</li><br>
+                <li>
+                  <div class="comment">その他各種取り揃えています。<br>お気軽におたずねください。</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+	</div>
+    </section>
+	  
+	  <section class="cocktailmenu margin-top-common sample">
+      <div class="grid-row-2">
+        <div class="grid-col">
+          <div class="grid-col-inner">
+            <div class="menu-container">
+              <h2>Cocktail</h2>
+              <ul>
+                 <li class="drymartini">DryMartini　&yen;700</li><br>
+       			 <li class="whitelady">WhiteLady　&yen;800</li><br>
+        		 <li class="gintonic">Gin&Tonic　&yen;700</li><br>
+      		     <li class="bloodymary">BloddyMary　&yen;800　etc</li><br><br>
+        		 <li>
+					 <div class="comment">お好みに合わせてお作りいたします。<br>
+                                     お気軽におたずねください。</div>
+			    </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-col">
+          <div class="grid-col-inner">
+            <div class="bg-gradation">
+              <img class="coctailphoto" src="images/Menu_cocktail.png" alt="cocktail">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!--上のHTMLを真似したのですが、お店の地図や住所・電話番号などの箇所に使用する基本的なタグはありますでしょうか？　ul li の部分はaddressというタグを使った方がいいのでしょうか？0213下須ß-->
+<!-- A. 
+ulをaddressタグで囲みました。
+ただしaddressタグは意味付けも微妙なので実務上はフッター以外では使われない場合も多いかと思います。
+
+※よくあるHTMLの全体構造
+<header>
+</header>
+  <main>
+    <section>
+      <article>ブログ記事など</article>
+    </section>
+  </main>
+<footer>
+  <address>連絡先情報はフッターにあることが多い</address>
+</footer>
+-->
+     <section id="access" class="access">
+      <div class="heading-common margin-top-l">
+        <h2 class="has-side-flower">Access</h2>
+      </div>
+		 
+		 <div class="grid-row-2">
+        <div class="grid-col">
+          <div class="grid-col-inner">
+            <div class="address-container">
+              <address>
+              <ul>
+                <li class="address">東京都世田谷区南烏山6-28-12青木ビル1F</li><br>
+                <li class="tel">TEL: 03-5969-8974</li><br>
+                <li class="hour">営業時間：19:00〜翌 2:00</li><br>
+                <li class="closed">定休日：日曜日</li><br>
+              </ul>
+            </address>
+            </div>
+          </div>
+        </div>
+        <div class="grid-col">
+          <div class="grid-col-inner">
+            
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.3210473845331!2d139.59885310186468!3d35.67000380333654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f1920e710ff5%3A0xca15351ab8db1670!2z44OQ44O8IOODn-OCt-OCp-ODqw!5e0!3m2!1sja!2sjp!4v1644041205302!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+          </div>
+        </div>
+      </div>
+		 
+		 
+       <!--<ul>
+        <li>東京都世田谷区南烏山6-28-12<br>
+          青木ビル1F</li><br><br>
+        <li>TEL: 03-5969-8974</li><br><br>
+        <li>営業時間：19:00〜翌 2:00</li><br><br>
+        <li>定休日：日曜日</li>
+		</ul>-->
+    </section>
+
+
+    <section id="contact" class="contact">
+		<div class="heading-common margin-top-l">
+			<h2 class="has-background-flower">Contact</h2>
+		</div>
+
+      
+      <div class="inner">
+      <form action="#" method="POST">
+		  
+		 <dl>
+			  
+		  <dt> <label for="username">お名前</label></dt>
+		　<dd><input type="text" name="username" id="username" value=""></dd>　
+		　<dt><label for="email">メールアドレス</label></dt>
+		　<dd><input type="email" name="email" id="email" value=""></dd>
+		　<dt><label for="inquiry">お問合せ内容</label></dt>
+		　<dd><textarea name="inquiry" id="inquiry" cols="30" rows="10"></textarea></dd>
+			  
+		 </dl>
+		  
+		  <!--<p><input type="submit" value="送信する"></p>-->
+		  <button type="submit">送信</button>
+		  
+      </form>
+		  </div>
+		
+    </section>
+
+  </main>
+
+
+  <footer>
+
+     <img class="footer-logo" src="images/michelle-logo.png" alt="logo">
+
+    <div class="footer-list">
+      <nav>
+        <ul>
+		 
+		  <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+		  <li><a href="#access">Access</a></li>
+          <li><a href="https://www.instagram.com/bar_michelle.4u/" target="_blank"><img class="instagram" src="images/Instagram_icon.png" alt="instagram"></a></li>
+          <li><a href="https://www.facebook.com/u.takashima" target="_blank"><img class="fb" src="images/fb_icon.png" alt="fb"></a></li>
+        
+		  </ul>
+      </nav>
+	  </div>
+		
+	  <div class="copyright">CopyRight©︎ BarMicchell 2022</div>
+
+    
+  </footer>
+	
+
+</body>
+
+</html>

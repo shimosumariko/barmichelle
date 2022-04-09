@@ -1,0 +1,407 @@
+@charset "UTF-8";
+body {
+   font-family: "Bradley Hand";
+  color: white;
+  background-color: black;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  /* ヘッダーを上部固定に 0221 */
+  position:fixed;
+  background-color: #000000;
+  z-index:9999;
+  width:100%;
+}
+
+main{
+  /* ヘッダーを上部固定にした分を下げる 0221 */
+  padding-top: 90px;
+}
+
+
+header .header-logo {
+  width: 500px;
+  /*background-color: #ff33ff;*/
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header .header-logo .logo {
+  line-height: 1;
+}
+
+
+header .header-list {
+  width: calc(100% - 500px);
+  /*background-color: #002200;*/
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header .header-list nav ul {
+  display: inline-block;
+  margin: 0 0 0 auto;
+}
+
+header .header-list nav ul li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+/*書き方合っていますでしょうか？0213下須*/
+/* A. こちらで問題ありません
+   ただし小文字の方がベター .Contact → .contact, .TOP → .top
+   （一般的には「1文字目は小文字」のようにプロジェクト全体でルールを揃える) */
+header .header-list nav ul li .Contact  {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #7c821c;
+  font-size: 20px;
+  font-family: "Chalkduster";
+  height: 38px;
+  width: 110px;
+  border-radius: 13px;
+  padding:10px;
+ 
+}
+
+
+.instagram {
+  width: 30px;
+}
+
+.fb {
+  width: 30px;
+}
+
+.TOP{
+	padding-top: 5%;
+}
+
+main .news {
+  font-family:"HanziPen SC", sans-serif;
+  font-size:18px;
+  text-align: center;
+  padding: 100px;
+}
+
+
+
+/*お花のアイコンと文字(About)の間隔を広げるにはどうしたらいいか？Aboutoの文字サイズを大きくするには、liタグにクラスを与えたら良いのか？　0130下須*/
+main .about {
+  display: inline-block;
+  width: 100%;
+}
+
+main .about ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+/* A. ULはリストの意味があるので、見出しの意味をもつH1,h2,h3を利用する + 飾り要素は可能であればcssのみで表示する */
+.heading-common {
+  text-align: center;
+  /*ガイドの赤線　border: 1px solid #ff0000;*/
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heading-common h2 {
+ /*ガイドの緑線 border: 1px solid #00ff00;*/
+  position: relative;
+  font-size: 60px;
+  display: inline-block;
+  padding: 0 80px;
+}
+.heading-common h2.has-side-flower:before, .heading-common h2.has-side-flower:after {
+  display: block;
+  content: "";
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("images/icon_flower1.png");
+  background-size: 70px auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.heading-common h2.has-side-flower:after {
+  left: auto;
+  right: 0;
+}
+
+.you-san {
+  float: left;
+  width: 40%;
+  padding-left: 80px;
+}
+
+.introduction {
+  font-family:"HanziPen SC", sans-serif;
+  font-size:20px;
+  margin-top: 250px;
+  margin-left: 600px;
+  text-align: center;
+  line-height: 30px;
+}
+
+main .menu {
+  display: inline-block;
+  width: 100%;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+/*chargeお一人様￥500を、もう少し上の方に位置を変えたい場合はどうしたらいいのか？ pタグでいいのか？　0130下須*/
+.menu p {
+  text-align: center;
+  font-family:"HanziPen SC", sans-serif;
+  font-size:20px;
+}
+
+/* A. divのほうが安全 + 中でpやspanをフォント指定などに使う場合を考慮 + 経験則的に下のマージンは下の要素につける方が楽 */
+.menu .charge-container {
+  /*ガイドの赤線　border: 1px solid #ff0000;*/
+  text-align: center;
+}
+.menu .charge-container p {
+  display: inline-block;
+}
+.menu .charge-container .price {
+  margin-left: 5px;
+}
+
+/* マージンはなるべく共通化する */　
+.margin-top-common {
+  margin-top: 40px;
+}
+
+.margin-top-l {
+  margin-top: 160px;
+}
+
+/*サイズが変わらない。クラス名の指定が間違ってる？　0130下須*/
+.beerphoto {
+  width: 75%;
+}
+
+/* A. とにかくdivで囲う + 画像は100%を基本に */
+/* 画像 */
+.bg-gradation {
+  width: 100%;
+  background-color: #497445;
+  padding: 20px 40px;
+　background: radial-gradient(#497445 50%,black)
+}
+
+.bg-gradation .beerphoto {
+  width: 100%;
+}
+
+/* メニュー */
+.menu-container {
+  width: 100%;
+  text-align: center;
+  font-family: "Marker Felt", sans-serif;
+}
+.menu-container ul li {
+  margin-top: 20px;
+}
+
+.menu-container h2{
+	font-size:25px;
+}
+/* HTMLの161、181行目の「その他各種取り揃えています・・・」の字体を指定したかったので、
+　.menu-container の中の ul の中の li の中の comment だと思い、　
+　セレクタを「.menu-container ul li.comment」と書いてfont-familyを指定したが効かず。
+　「.comment」にすると効いた。結果、セレクタは「.comment」で合っているのでしょうか・・・？0213下須　*/
+
+/* A. liに指定すると、ブラウザによっては効かない場合があるかもしれません。
+実際の案件では作業効率から下記のようにしています。
+- liはmarginやwidthだけ指定
+- liの子要素にdivを追加し、divのクラスで文字間/行間/フォント/文字サイズ/太字や斜体/paddingなどを指定する
+- まれにdivの子要素でpタグを使う場合も: 問題（中にdivを追加できない/paddingが効かない組み合わせ)があるので、段落のある長文以外ではあまりpを使わない方が無難）
+*/
+.menu-container ul li .comment{
+	font-family:"HanziPen SC", sans-serif;
+}
+
+/* グリッド */
+.grid-row-2 {
+ /*ガイドの赤線 border: 1px solid #ff0000;*/
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0;
+}
+.grid-row-2 .grid-col {
+  padding: 0;
+  width: 50%;
+}
+.grid-row-2 .grid-col .grid-col-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+/*137行目を真似してみたが違うか・・・？ß*/
+.heading-common h2.has-background-flower{
+  display: block;
+  /*width: 70px; */
+  height: 70px;
+  /*position: absolute; 
+  top: 0;
+  left: 0;*/
+  /* background-image: url("images/icon_flower1.png");
+  background-size: 70px auto;
+  background-repeat: no-repeat;
+  background-position: 50%; */
+  /*opacity: 0.4;*/ /*透明度が変化しない 0205*/
+
+  position:relative;
+}
+/*透明度が変化しない 0205*/
+/* A. 背景は透明度変更できないので「擬似要素 after」を使う */
+.heading-common h2.has-background-flower:after {
+  display: block;
+  content: "";
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 35px);
+  opacity: 0.6;
+  background-image: url("images/icon_flower1.png");
+  background-size: 70px auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+
+.address-container{
+	width:100%;
+	text-align:center;
+	font-family:"HanziPen SC", sans-serif;
+}
+
+
+
+
+.inner{
+	display: block;
+	width: 500px;
+	margin: 0 auto;	
+	
+}
+
+.inner input, .inner textarea{
+	display: block;
+	width: 100%;
+	border-radius: 7px;
+	background-color:white;
+	color:black;
+}
+
+.inner input{
+	height: 40px;
+}
+
+.inner textarea{
+	height: 100px;
+	margin-bottom:60px;
+}
+
+.inner label{
+	display: block;
+	text-align: center;
+	font-family:"HanziPen SC", sans-serif;
+}
+
+.inner button {
+	display:block;
+	width: 50%;
+	height:38px;
+	background-color:#7c821c;
+	margin: 0 auto;
+	margin-bottom: 80px;
+	border-radius: 13px;
+	text-align: center;
+	font-family:"HanziPen SC", sans-serif;
+}
+
+ footer {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background-color: #002200;
+  height: 180px;
+}
+
+footer .footer-logo {
+  padding: 40px;
+  width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+footer .footer-logo .logo {
+  line-height: 1;
+}
+
+footer .footer-list {
+  width: calc(100% - 500px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+footer .footer-list nav ul {
+  display: inline-block;
+  margin: 0 0 0 auto;
+}
+
+footer .footer-list nav ul li {
+  display: inline-block;
+  padding: 20px;
+}
+
+footer .copyright{
+	display: inline-block;
+  	margin: 0 0 0 auto;
+	
+}
